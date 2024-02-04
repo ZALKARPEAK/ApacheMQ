@@ -60,22 +60,4 @@ public class MessageController {
         }
         return "Нет новых сообщений";
     }
-
-   /* @JmsListener(destination = "${activemq.queue.name}")
-    public void receiveAndSendToOtherApi(final Message message) throws JMSException {
-        if (message instanceof TextMessage) {
-            String text = ((TextMessage) message).getText();
-            System.out.println("Получено сообщение: " + text);
-
-            messageRepo.save(text);
-
-            String apiUrl = "http://your-other-api-url";
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            HttpEntity<String> request = new HttpEntity<>(text, headers);
-            ResponseEntity<String> response = messageRepo.postForEntity(apiUrl, request, String.class);
-
-            log.info("Сообщение успешно сохранено и отправлено в другой API: " + response.getBody());
-        }
-    }*/
 }
